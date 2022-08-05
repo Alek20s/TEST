@@ -1,0 +1,22 @@
+<html>
+<ul id="list"></ul>
+
+
+
+<script>
+var item, fruits;
+
+
+fruits = ['apppple', 'mango', 'Melonh', 'Orange', 'banana'];
+
+fruits.forEach((item) => {
+  let element_list = document.getElementById('list');
+  let new_ul = document.createElement('ul');
+  new_ul.innerText = item;
+
+  element_list.appendChild(new_ul);
+});
+
+
+</script>
+</html>
