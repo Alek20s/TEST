@@ -1,116 +1,25 @@
-
-<style>
-   {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    font-size: 62.5%;
-    font-family: 'Roboto', sans-serif;
-}
-
-li {
-    list-style: none;
-}
-
-a {
-    text-decoration: none;
-}
-   .hamburger {
-    display: none;
-}
-
-.bar {
-    display: block;
-    width: 25px;
-    height: 3px;
-    margin: 5px auto;
-    -webkit-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
-    background-color: #101010;
-}
-  const navLink = document.querySelectorAll(".nav-link");
-
-navLink.forEach(n => n.addEventListener("click", closeMenu));
-
-function closeMenu() {
-    hamburger.classList.remove("active");
-    navMenu.classList.remove("active");
-} 
+<html>
    
+   <ul id="list">
+  <li>Apple</li>
+</ul>
+
    
-</style>
-  
-
-<header class="header">
-        <nav class="navbar">
-            <a href="#" class="nav-logo">WebDev.</a>
-            <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Services</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Blog</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">About</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Contact</a>
-                </li>
-            </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </nav>
-
-  
-  
-  
-  
-  
-  
-<ul id="list"></ul>
-<script>
-var item, fruits;
+   <script>
+      
+      var click_count;
 
 
-fruits = ['apppple', 'mango', 'Melon', 'Orange', 'banana'];
+click_count = 0;
 
-fruits.forEach((item) => {
-  let element_list = document.getElementById('list');
-  let new_ul = document.createElement('ul');
-  new_ul.innerText = item;
 
-  element_list.appendChild(new_ul);
+document.getElementById('count').addEventListener('click', (event) => {
+  click_count = (typeof click_count === 'number' ? click_count : 0) + 1;
+  event.target.innerText = click_count;
+  let element_click_count = document.getElementById('click_count');
+  element_click_count.innerText = click_count;
+
 });
+   </script>
    
-   
-const hamburger = document.querySelector(".hamburger");
-const navMenu = document.querySelector(".nav-menu");
-
-hamburger.addEventListener("click", mobileMenu);
-
-function mobileMenu() {
-    hamburger.classList.toggle("active");
-    navMenu.classList.toggle("active");
-}
-   
-       .hamburger.active .bar:nth-child(2) {
-        opacity: 0;
-    }
-
-    .hamburger.active .bar:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-    }
-
-    .hamburger.active .bar:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-    }
-
-</script>
 </html>
