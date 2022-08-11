@@ -1,25 +1,24 @@
 <html>
    
-   <ul id="list">
-  <li>Appleggf</li>
-</ul>
+<ul id="list"></ul>
 
    
    <script>
-      
-      var click_count;
+      var item, fruits;
 
 
-click_count = 0;
+fruits = ['apppple', 'mango', 'Melonh', 'Orange', 'banana'];
 
+fruits.forEach((item) => {
+  let element_list = document.getElementById('list');
+  let new_ul = document.createElement('ul');
+  new_ul.innerText = item;
 
-document.getElementById('count').addEventListener('click', (event) => {
-  click_count = (typeof click_count === 'number' ? click_count : 0) + 1;
-  event.target.innerText = click_count;
-  let element_click_count = document.getElementById('click_count');
-  element_click_count.innerText = click_count;
-
+  element_list.appendChild(new_ul);
 });
+
+      
    </script>
+   
    
 </html>
