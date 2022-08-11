@@ -31,6 +31,15 @@ a {
     transition: all 0.3s ease-in-out;
     background-color: #101010;
 }
+  const navLink = document.querySelectorAll(".nav-link");
+
+navLink.forEach(n => n.addEventListener("click", closeMenu));
+
+function closeMenu() {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+} 
+   
    
 </style>
   
